@@ -5,15 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="100dp"
-        android:padding="18dp"
-        android:text="Ку"
-        android:textSize="22sp" />
-
     <FrameLayout
         android:id="@+id/assistant_container"
         android:layout_width="match_parent"

@@ -8,7 +8,7 @@ import com.justai.aimybox.Aimybox
 import com.justai.aimybox.components.AimyboxAssistantFragment
 import com.justai.aimybox.components.AimyboxProvider
 
-class MainActivity(override val aimybox: Aimybox) : AppCompatActivity(), AimyboxProvider {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -20,5 +20,10 @@ class MainActivity(override val aimybox: Aimybox) : AppCompatActivity(), Aimybox
             commit()
         }
 
+    }
+    override fun onBackPressed() {
+        val assistantFragment = (supportFragmentManager.findFragmentById(R.id.assistant_container)
+                as? AimyboxAssistantFragment)
+        if (assistantFragment?.onBackPressed() != true) super.onBackPressed()
     }
 }
